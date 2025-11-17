@@ -2,10 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>temprepo test page</title>
+  <title>Joshua Mathieu | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal site for Joshua Mathieu – veteran, builder, and lifelong learner." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>It works!</h1>
-  <p>This is my GitHub Pages site for the <code>temprepo</code> repo.</p>
+  <div class="container">
+    <!-- Hero / Intro -->
+    <header>
+      <h1>Hi, I’m Joshua.</h1>
+      <p>
+        I’m a U.S. Army veteran turned technologist and builder. I care about
+        doing hard things on purpose, building systems that actually work, and
+        helping people get unstuck in their own lives.
+      </p>
+    </header>
+
+    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #1f2937;" />
+
+    <!-- Quick facts -->
+    <section aria-labelledby="quick-facts-heading">
+      <h2 id="quick-facts-heading">Quick facts</h2>
+      <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+        <li>U.S. Army veteran with ~10 years of service and leadership experience.</li>
+        <li>Moved from active duty into tech and cybersecurity.</li>
+        <li>Fast-tracked my education (undergrad and grad in a short timeframe).</li>
+        <li>Now focused on building tools, businesses, and systems that scale.</li>
+      </ul>
+    </section>
+
+    <!-- What I'm working on -->
+    <section aria-labelledby="work-heading">
+      <h2 id="work-heading">What I’m building right now</h2>
+      <p>
+        I’m in a season of building. A few of the things I’ve been working on:
+      </p>
+      <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+        <li>
+          <strong>Cybersecurity & compliance tooling:</strong>
+          creating practical tools that make complex frameworks (like RMF and
+          NIST 800-53) less painful and more automated.
+        </li>
+        <li>
+          <strong>Task & habit systems:</strong>
+          experimenting with gamified ways to track daily tasks, XP, and long-term goals.
+        </li>
+        <li>
+          <strong>Writing & self-development content:</strong>
+          turning hard lessons from the military, tech, and life into
+          straight-forward advice people can actually use.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Background / story -->
+    <section aria-labelledby="story-heading">
+      <h2 id="story-heading">A bit of my story</h2>
+      <p>
+        I started in the military, where I learned quickly that no one is coming
+        to save you. You either figure it out, or you get left behind. That
+        mindset has shaped how I approach everything: work, learning, fitness,
+        and the way I help other people.
+      </p>
+      <p>
+        After leaving active duty, I pushed hard into education and tech,
+        moving into cybersecurity and cloud work. Along the way I realized
+        something important: I don’t just want a job, I want to build things
+        that actually matter and give me freedom.
+      </p>
+      <p>
+        These days I’m focused on combining all of that—discipline from the
+        military, problem-solving from tech, and hard-earned life experience—
+        into tools, systems, and content that help people get unstuck and move
+        forward.
+      </p>
+    </section>
+
+    <!-- How I think / values -->
+    <section aria-labelledby="values-heading">
+      <h2 id="values-heading">How I think</h2>
+      <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+        <li><strong>Ownership over excuses.</strong> If it’s my life, it’s my responsibility.</li>
+        <li><strong>Simplify first.</strong> Most people don’t need more; they need less, done better.</li>
+        <li><strong>Systems beat motivation.</strong> Build habits and infrastructure so progress is automatic.</li>
+        <li><strong>Tell the truth.</strong> To myself, first. Then to everyone else.</li>
+      </ul>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Want to connect?</h2>
+      <p>
+        This site is just a simple landing page for now, but I’m always open to
+        good conversations about security, systems, business ideas, or personal
+        growth.
+      </p>
+      <p>
+        You can plug this into your own contact flow later (email, socials, or a
+        form). For now, this button is just here to prove the JavaScript works.
+      </p>
+      <button class="button" type="button">Say hello</button>
+    </section>
+
+    <footer style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.8;">
+      <p>&copy; <span id="year"></span> Joshua Mathieu. Built with GitHub Pages.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Small inline helper just to set the year in the footer
+    document.addEventListener("DOMContentLoaded", () => {
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
 </body>
 </html>
