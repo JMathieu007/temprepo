@@ -1,0 +1,11 @@
+{
+  "name": "temprepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"Add your build command here\"",
+    "test": "echo \"No tests\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
