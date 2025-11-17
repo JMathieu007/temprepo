@@ -2,117 +2,271 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Joshua Mathieu | Home</title>
+  <title>Mini Web Playground</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Personal site for Joshua Mathieu – veteran, builder, and lifelong learner." />
+  <meta name="description" content="Bootcamp project: a small HTML, CSS, and JavaScript playground." />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Extra page-specific styles on top of style.css -->
+  <style>
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #e5e7eb;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: linear-gradient(135deg, #38bdf8, #a855f7, #f97316);
+      color: #0f172a;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      margin-bottom: 1rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pill {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 0.75rem;
+      color: #cbd5f5;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (min-width: 700px) {
+      .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 0.9rem;
+      padding: 1rem;
+      border: 1px solid #1f2937;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background: radial-gradient(circle at top left, #38bdf8, transparent 60%),
+                  radial-gradient(circle at bottom right, #a855f7, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .checklist {
+      margin-left: 1.2rem;
+      margin-top: 0.5rem;
+      list-style: "✔ ";
+    }
+
+    .checklist li {
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight {
+      color: #38bdf8;
+      font-weight: 500;
+    }
+
+    .fun-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .fun-tag {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px dashed #4b5563;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <!-- Hero / Intro -->
-    <header>
-      <h1>Hi, I’m Joshua.</h1>
-      <p>
-        I’m a U.S. Army veteran turned technologist and builder. I care about
-        doing hard things on purpose, building systems that actually work, and
-        helping people get unstuck in their own lives.
+    <!-- Top navigation -->
+    <nav class="nav">
+      <div class="logo">Bootcamp Project</div>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#tech-stack">Tech stack</a>
+        <a href="#checklist">Checklist</a>
+      </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header id="overview">
+      <div class="badge">HTML + CSS + JavaScript</div>
+      <!-- script.js will also update this text to show it's running -->
+      <h1 class="hero-title">Mini Web Playground</h1>
+      <p class="hero-subtitle">
+        A tiny, colorful site built as a bootcamp project to practice layout,
+        styling, and a sprinkle of JavaScript interactivity.
       </p>
+
+      <div class="pill-row">
+        <span class="pill">Responsive-ish layout</span>
+        <span class="pill">Custom styles</span>
+        <span class="pill">JS button interaction</span>
+        <span class="pill">GitHub Pages deploy</span>
+      </div>
+
+      <button class="button" type="button">
+        Click me to test the JavaScript ⚡
+      </button>
     </header>
 
-    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #1f2937;" />
+    <hr style="margin: 1.75rem 0; border: 0; border-top: 1px solid #1f2937;" />
 
-    <!-- Quick facts -->
-    <section aria-labelledby="quick-facts-heading">
-      <h2 id="quick-facts-heading">Quick facts</h2>
-      <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
-        <li>U.S. Army veteran with ~10 years of service and leadership experience.</li>
-        <li>Moved from active duty into tech and cybersecurity.</li>
-        <li>Fast-tracked my education (undergrad and grad in a short timeframe).</li>
-        <li>Now focused on building tools, businesses, and systems that scale.</li>
+    <!-- Tech stack / cards -->
+    <section id="tech-stack" aria-labelledby="tech-heading">
+      <h2 id="tech-heading">What this page demonstrates</h2>
+      <p>
+        This site is intentionally small, but it touches the main pieces of a
+        basic front-end setup: structure, styling, and behavior.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>HTML: structure</h3>
+          <p>
+            Semantic sections like <span class="highlight">&lt;header&gt;</span>,
+            <span class="highlight">&lt;section&gt;</span>, and
+            <span class="highlight">&lt;footer&gt;</span> keep the page organized
+            and easier to read—for both humans and browsers.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>CSS: styling</h3>
+          <p>
+            A mix of a global <code>style.css</code> file and a few
+            page-specific rules add the dark theme, glowing cards, and fun
+            colors you see here.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>JavaScript: interaction</h3>
+          <p>
+            A small <code>script.js</code> file listens for the DOM to load,
+            tweaks the main heading, and hooks up the button so it can respond
+            when you click it.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Checklist / learning goals -->
+    <section id="checklist" aria-labelledby="checklist-heading" style="margin-top: 1.75rem;">
+      <h2 id="checklist-heading">Bootcamp checklist</h2>
+      <p>
+        The page can be used to show that a few common front-end skills have
+        been practiced:
+      </p>
+      <ul class="checklist">
+        <li>Create a multi-section layout with semantic HTML.</li>
+        <li>Link an external stylesheet and JavaScript file.</li>
+        <li>Add custom colors, typography, and simple responsive behavior.</li>
+        <li>Use JavaScript to react to a button click.</li>
+        <li>Deploy the project with GitHub Pages.</li>
       </ul>
+
+      <div class="fun-row">
+        <span class="fun-tag">🎨 Custom styling</span>
+        <span class="fun-tag">🧱 Semantic HTML</span>
+        <span class="fun-tag">⚙️ JS events</span>
+        <span class="fun-tag">🚀 Live on GitHub Pages</span>
+      </div>
     </section>
 
-    <!-- What I'm working on -->
-    <section aria-labelledby="work-heading">
-      <h2 id="work-heading">What I’m building right now</h2>
+    <footer>
       <p>
-        I’m in a season of building. A few of the things I’ve been working on:
+        &copy; <span id="year"></span> Mini Web Playground · Built as a bootcamp project.
       </p>
-      <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
-        <li>
-          <strong>Cybersecurity & compliance tooling:</strong>
-          creating practical tools that make complex frameworks (like RMF and
-          NIST 800-53) less painful and more automated.
-        </li>
-        <li>
-          <strong>Task & habit systems:</strong>
-          experimenting with gamified ways to track daily tasks, XP, and long-term goals.
-        </li>
-        <li>
-          <strong>Writing & self-development content:</strong>
-          turning hard lessons from the military, tech, and life into
-          straight-forward advice people can actually use.
-        </li>
-      </ul>
-    </section>
-
-    <!-- Background / story -->
-    <section aria-labelledby="story-heading">
-      <h2 id="story-heading">A bit of my story</h2>
-      <p>
-        I started in the military, where I learned quickly that no one is coming
-        to save you. You either figure it out, or you get left behind. That
-        mindset has shaped how I approach everything: work, learning, fitness,
-        and the way I help other people.
-      </p>
-      <p>
-        After leaving active duty, I pushed hard into education and tech,
-        moving into cybersecurity and cloud work. Along the way I realized
-        something important: I don’t just want a job, I want to build things
-        that actually matter and give me freedom.
-      </p>
-      <p>
-        These days I’m focused on combining all of that—discipline from the
-        military, problem-solving from tech, and hard-earned life experience—
-        into tools, systems, and content that help people get unstuck and move
-        forward.
-      </p>
-    </section>
-
-    <!-- How I think / values -->
-    <section aria-labelledby="values-heading">
-      <h2 id="values-heading">How I think</h2>
-      <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
-        <li><strong>Ownership over excuses.</strong> If it’s my life, it’s my responsibility.</li>
-        <li><strong>Simplify first.</strong> Most people don’t need more; they need less, done better.</li>
-        <li><strong>Systems beat motivation.</strong> Build habits and infrastructure so progress is automatic.</li>
-        <li><strong>Tell the truth.</strong> To myself, first. Then to everyone else.</li>
-      </ul>
-    </section>
-
-    <!-- Contact / CTA -->
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Want to connect?</h2>
-      <p>
-        This site is just a simple landing page for now, but I’m always open to
-        good conversations about security, systems, business ideas, or personal
-        growth.
-      </p>
-      <p>
-        You can plug this into your own contact flow later (email, socials, or a
-        form). For now, this button is just here to prove the JavaScript works.
-      </p>
-      <button class="button" type="button">Say hello</button>
-    </section>
-
-    <footer style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.8;">
-      <p>&copy; <span id="year"></span> Joshua Mathieu. Built with GitHub Pages.</p>
     </footer>
   </div>
 
+  <!-- External JS -->
   <script src="script.js"></script>
   <script>
-    // Small inline helper just to set the year in the footer
+    // Set the year in the footer
     document.addEventListener("DOMContentLoaded", () => {
       const yearSpan = document.getElementById("year");
       if (yearSpan) {
